@@ -31,12 +31,16 @@ def test_reg_form(browser_management):
     browser.element('[for="hobbies-checkbox-1"]').click()
     browser.element('[for="hobbies-checkbox-2"]').click()
     time.sleep(3)
-    picture_way = os.getcwd()+'picture1.jpg'
-    print(picture_way)
-    #browser.element('[id="uploadPicture"]').double_click()
-    #browser.element('[id="uploadPicture"]').send_keys(os.getcwd()+'picture1.jpg')
+    #picture_way = os.getcwd()+'/picture1.jpg'
+    #return picture_way
+    browser.element('[id="uploadPicture"]').double_click()
+    browser.element('[id="uploadPicture"]').send_keys(os.getcwd()+'/picture1.jpg')
     time.sleep(3)
+    browser.element('[id="currentAddress"]').should(be.blank).type('1478 Custer Street')
+    time.sleep(10)
 
+#<textarea placeholder="Current Address" rows="5" cols="20" id="currentAddress"
+# class="form-control"></textarea>
 
 #"C:\Users\klima\PycharmProjects\qa_guru_python_4_5\tests\IMG_20230224_164633_1.jpg"
 
