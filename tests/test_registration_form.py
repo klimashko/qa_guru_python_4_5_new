@@ -1,7 +1,7 @@
 from selene import browser, command
 from selene import be, have
 import os
-import time
+
 
 
 
@@ -49,7 +49,7 @@ def test_reg_form(browser_management):
     browser.element('//tbody/tr[9]/td[2]').should(have.text('1478 Custer Street'))
     browser.element('//tbody/tr[10]/td[2]').should(have.text('Uttar Pradesh Agra'))
     browser.element('[id="closeLargeModal"]').perform(command.js.click)  # Нажать кнопку Close
-    time.sleep(5)
+
 
 
 
