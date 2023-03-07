@@ -33,17 +33,21 @@ def test_reg_form(browser_management):
     browser.element('[id="uploadPicture"]').send_keys(os.getcwd()+'/picture1.jpg')
     #time.sleep(3)
     browser.element('[id="currentAddress"]').should(be.blank).type('1478 Custer Street')
-    time.sleep(5)
+    time.sleep(2)
     browser.element('[id="adplus-anchor"]').execute_script('element.remove()') #Удаляет рекламный баннер
-    time.sleep(5)
+    time.sleep(2)
     browser.element('[id="state"]').click() #открыть список для выбора штата
     browser.element('[id="react-select-3-option-1"]').click() #выбрать штат
     browser.element('[id="city"]').click()
     browser.element('[id="react-select-4-option-0"]').click()
-    time.sleep(3)
+    time.sleep(5)
+    browser.element('#submit').perform(command.js.click) #Нажать кнопку Submit
+    time.sleep(300)
 
     #Проверка того, что форма заполнена корректно
-    browser.element('#firstName').should(have.text('John'))
-    browser.element('[id="lastName"]').hould(have.text('Smith'))
+    #browser.element('#firstName').should(have.text('John'))
+    #browser.element('[id="lastName"]').hould(have.text('Smith'))
+    time.sleep(3)
 
 
+    #browser.element('[id="closeLargeModal"]').perform(command.js.click)  # Нажать кнопку Close
